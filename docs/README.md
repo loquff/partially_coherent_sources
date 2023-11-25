@@ -3,6 +3,7 @@
 This Python package provides functionality for generating masks for the production of partially coherent light beams. It includes two methods for mask generation: phase randomized and appearance probability.
 
 **Docs**: [https://marcsgil.github.io/partially_coherent_sources/](https://marcsgil.github.io/partially_coherent_sources/)
+
 **GitHub**: [https://github.com/marcsgil/partially_coherent_sources.git](https://github.com/marcsgil/partially_coherent_sources.git)
 
 ## Installation
