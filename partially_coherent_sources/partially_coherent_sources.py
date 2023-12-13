@@ -43,7 +43,7 @@ def generate_masks(n_masks: int, weights: ArrayLike, fields: ArrayLike, method='
     assert weights.shape[0] == fields.shape[0], 'weights must have the same number of elements as fields'
 
     if method == 'phase_randomized':
-        phases = random_phases((n_masks, fields.shape[0]), seed)
+        phases = np.exp(1j * random_phases((n_masks, fields.shape[0]), seed))
         kernel = np.reshape(fields, (fields.shape[0], -1))
         for n in range(fields.shape[0]):
             kernel[n] *= np.sqrt(weights[n])
