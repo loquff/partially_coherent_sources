@@ -14,11 +14,11 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.12">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
     
     
       
-        <title>Reference - quantum_samplers</title>
+        <title>Reference - partially_coherent_sources</title>
       
     
     
@@ -93,7 +93,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="quantum_samplers" class="md-header__button md-logo" aria-label="quantum_samplers" data-md-component="logo">
+    <a href=".." title="partially_coherent_sources" class="md-header__button md-logo" aria-label="partially_coherent_sources" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -107,7 +107,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            quantum_samplers
+            partially_coherent_sources
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -184,19 +184,20 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="quantum_samplers" class="md-nav__button md-logo" aria-label="quantum_samplers" data-md-component="logo">
+    <a href=".." title="partially_coherent_sources" class="md-nav__button md-logo" aria-label="partially_coherent_sources" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    quantum_samplers
+    partially_coherent_sources
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
       
       
+  
   
   
   
@@ -219,6 +220,7 @@
   
   
     
+  
   
   
     <li class="md-nav__item md-nav__item--active">
@@ -710,7 +712,7 @@
         <span class="n">phases</span> <span class="o">=</span> <span class="n">random_phases</span><span class="p">((</span><span class="n">n_masks</span><span class="p">,</span> <span class="n">fields</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">seed</span><span class="p">)</span>
         <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">fields</span><span class="p">,</span> <span class="p">(</span><span class="n">fields</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
         <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">fields</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-            <span class="n">kernel</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">*=</span> <span class="n">weights</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+            <span class="n">kernel</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">*=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
         <span class="n">masks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">phases</span><span class="p">,</span> <span class="n">kernel</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">n_masks</span><span class="p">,</span> <span class="o">*</span><span class="n">fields</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span>
 
     <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;appearance_probability&#39;</span><span class="p">:</span>
@@ -773,7 +775,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      <script src="../assets/javascripts/bundle.cd18aaf1.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
