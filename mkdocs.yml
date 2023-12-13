@@ -1,4 +1,4 @@
-site_name: quantum_samplers
+site_name: partially_coherent_sources
 
 theme:
   name: "material"

@@ -46,7 +46,7 @@ def generate_masks(n_masks: int, weights: ArrayLike, fields: ArrayLike, method='
         phases = random_phases((n_masks, fields.shape[0]), seed)
         kernel = np.reshape(fields, (fields.shape[0], -1))
         for n in range(fields.shape[0]):
-            kernel[n] *= weights[n]
+            kernel[n] *= np.sqrt(weights[n])
         masks = np.matmul(phases, kernel).reshape((n_masks, *fields.shape[1:]))
 
     elif method == 'appearance_probability':
